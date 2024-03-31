@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0,0)
+var coins = 0
 const SPEED = 180
 const JUMPFORCE = -1000
 const GRAVITY = 35
@@ -29,9 +30,13 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	velocity.x = lerp(velocity.x,0,0.4)
+	
+	
 		
 		
 
 
 func _on_fallzone_body_entered(body):
 	get_tree().change_scene("res://Level1.tscn")
+
+
