@@ -45,6 +45,8 @@ format = 1
 tile_data = PoolIntArray( 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 3, 0, 262143, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 327679, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 393215, 1, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 3, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393222, 0, 0, 524287, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tiles One-Way"]
+collision_layer = 2
+collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles One-Way/StaticBody2D"]
 position = Vector2( 96, 352 )
@@ -208,6 +210,7 @@ position = Vector2( -96, 352 )
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 47.5195, 293.504 )
+direction = 1
 [connection signal="body_entered" from="fallzone" to="player" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
