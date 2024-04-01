@@ -190,26 +190,37 @@ __meta__ = {
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 0, 256 )
+position = Vector2( -9.52264, 201.585 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 192, 256 )
+position = Vector2( 219.888, 204.306 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 2.04059, -29.248 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 224, 0 )
+position = Vector2( 228.081, -28.5678 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 448, 0 )
+position = Vector2( 448, -29.9282 )
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy1" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( -96, 352 )
+collision/safe_margin = 0.1
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 10 )]
-position = Vector2( 47.5195, 293.504 )
+position = Vector2( 44.7987, 284.662 )
+collision/safe_margin = 0.1
+direction = 1
+
+[node name="enemy3" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( 125.741, 24.8301 )
+direction = 1
+
+[node name="enemy4" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( 289.666, 485.317 )
 direction = 1
 [connection signal="body_entered" from="fallzone" to="player" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected"]
