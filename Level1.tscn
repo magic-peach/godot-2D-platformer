@@ -65,24 +65,6 @@ collision_mask = 49
 format = 1
 tile_data = PoolIntArray( -131083, 0, 0, -65547, 0, 0, -11, 0, 0, -65524, 10, 0, -65523, 3, 0, -65522, 11, 0, 65525, 0, 0, 17, 10, 0, 18, 3, 0, 19, 3, 0, 20, 3, 0, 21, 3, 0, 22, 3, 0, 23, 11, 0, 131061, 0, 0, 65570, 10, 0, 65571, 3, 0, 65572, 3, 0, 65573, 3, 0, 65574, 11, 0, 196597, 0, 0, 131087, 10, 0, 131088, 11, 0, 262133, 0, 0, 196640, 10, 0, 196641, 11, 0, 327669, 0, 0, 262154, 10, 0, 262155, 3, 0, 262156, 3, 0, 262157, 11, 0, 262162, 10, 0, 262163, 11, 0, 393205, 0, 0, 327709, 10, 0, 327710, 11, 0, 458741, 0, 0, 524277, 0, 0, 589814, 1, 0, 589815, 3, 0, 589816, 3, 0, 589817, 3, 0, 589818, 3, 0, 589819, 3, 0, 589820, 3, 0, 589821, 3, 0, 589822, 3, 0, 589823, 3, 0, 524288, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 4, 0, 524310, 1, 0, 524311, 3, 0, 524312, 3, 0, 524313, 3, 0, 524314, 3, 0, 524315, 3, 0, 524316, 3, 0, 524317, 3, 0, 524318, 3, 0, 524319, 4, 0, 655350, 0, 0, 655351, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0 )
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -337.466, 188.828 )
-collision_mask = 30
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-current = true
-limit_left = -700
-limit_top = -500
-limit_right = 3000
-limit_bottom = 700
-limit_smoothed = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-drag_margin_left = 0.3
-drag_margin_right = 0.3
-editor_draw_limits = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -214,6 +196,7 @@ collision/safe_margin = 0.1
 position = Vector2( 44.7987, 284.662 )
 collision/safe_margin = 0.1
 direction = 1
+detects_cliffs = false
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 125.741, 24.8301 )
@@ -222,6 +205,25 @@ direction = 1
 [node name="enemy4" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 289.666, 485.317 )
 direction = 1
+detects_cliffs = false
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -337.466, 188.828 )
+collision_mask = 30
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+limit_left = -700
+limit_top = -500
+limit_right = 3000
+limit_bottom = 700
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
 [connection signal="body_entered" from="fallzone" to="player" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
