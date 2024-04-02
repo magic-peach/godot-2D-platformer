@@ -26,6 +26,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMPFORCE
+		$SoundJump.play()
 		
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
