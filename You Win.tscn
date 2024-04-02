@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Restart.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 85
 outline_size = 7
 outline_color = Color( 0.0117647, 0.0156863, 0.368627, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 5
+outline_color = Color( 0.203922, 0.305882, 0.254902, 1 )
+font_data = ExtResource( 2 )
 
 [node name="You Win" type="Control"]
 anchor_right = 1.0
@@ -39,3 +47,22 @@ text = " YOU WIN!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Restart" type="Button" parent="."]
+modulate = Color( 0.654902, 1, 0.317647, 1 )
+self_modulate = Color( 0.317647, 1, 0.937255, 1 )
+margin_left = 383.129
+margin_top = 337.801
+margin_right = 641.129
+margin_bottom = 437.801
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.345098, 0.505882, 0.341176, 1 )
+custom_colors/font_color_hover = Color( 0.662745, 0.839216, 0.898039, 1 )
+custom_colors/font_color_pressed = Color( 0.447059, 0, 0.14902, 1 )
+custom_constants/hseparation = 20
+text = "  RESTART"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
