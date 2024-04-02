@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://MainMenuButton.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 2
+outline_color = Color( 0.207843, 0.309804, 0.321569, 1 )
+font_data = ExtResource( 2 )
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.831373, 0.639216, 0.45098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 203.975
+margin_top = 154.331
+margin_right = 865.975
+margin_bottom = 355.331
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.737255, 0.278431, 0.286275, 1 )
+custom_colors/font_outline_modulate = Color( 0.470588, 0, 0, 1 )
+text = "GAME OVER!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="Button" parent="."]
+margin_left = 421.098
+margin_top = 325.604
+margin_right = 677.098
+margin_bottom = 437.604
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0196078, 0.764706, 0.686275, 1 )
+custom_colors/font_color_hover = Color( 0.980392, 0.639216, 0.027451, 1 )
+custom_colors/font_color_pressed = Color( 0.941176, 0.501961, 0.501961, 1 )
+text = "Main Menu"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_MainMenuButton_pressed"]
