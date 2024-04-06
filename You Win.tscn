@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Restart.gd" type="Script" id=3]
+[ext_resource path="res://Assets/sounds/180409-What-is-Love-01.-What-is-Love-_music_.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 85
@@ -65,4 +66,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]

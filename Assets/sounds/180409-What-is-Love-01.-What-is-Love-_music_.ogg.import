@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/180409-What-is-Love-01.-What-is-Love-_music_.ogg-fb2ac0daff48afcf400a8b588d7f9d6c.oggstr"
+
+[deps]
+
+source_file="res://Assets/sounds/180409-What-is-Love-01.-What-is-Love-_music_.ogg"
+dest_files=[ "res://.import/180409-What-is-Love-01.-What-is-Love-_music_.ogg-fb2ac0daff48afcf400a8b588d7f9d6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
